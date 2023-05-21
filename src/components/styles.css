@@ -1,0 +1,42 @@
+
+
+.table-container {
+    margin-top: 20px;
+    border-radius: 8px;
+    margin: 10px;
+    overflow: hidden; /* Ensure the table container hides overflow */
+ 
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0; /* Remove default spacing between table cells */
+    table-layout: fixed; /* Add this line to fix column widths */
+
+    
+  }
+  
+  .table-container th,
+  .table-container td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid darkkhaki;
+    border-right: 1px solid darkkhaki; /* Add right border to cells */
+    border-left: 1px solid darkkhaki; /* Add left border to cells */
+    background-color: rgb(246, 244, 242);
+
+  }
+  
+  .table-container th {
+    background-color: moccasin;
+  }
+  
+  .table-container tbody tr:hover td{
+    background-color: darksalmon !important;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
