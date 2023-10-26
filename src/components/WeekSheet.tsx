@@ -70,7 +70,6 @@ const WeekSheet: React.FC = () => { //defines a functional React component using
         if (currentMonth > 0) //ensures that the user doesn't navigate to a month before January.
         {
       setCurrentMonth((prevMonth) => prevMonth - 1);
-      setCurrentWeek(1);
       setWeekly(false);
         }
     };
@@ -79,7 +78,6 @@ const WeekSheet: React.FC = () => { //defines a functional React component using
         if (currentMonth < 11)
         {
       setCurrentMonth((prevMonth) => prevMonth + 1);
-      setCurrentWeek(1);
       setWeekly(false);
         }
     };
@@ -109,16 +107,10 @@ var date = moment(timestamp, "YYYYMMDD").format("MMM Do YYYY");
     return date.toString();
     };
 
-// const getWeekNumber = (timestamp: string) => {
-//     var date = moment(timestamp, "YYYYMMDD");
-//     var weekNumber = date.week();
-      
-//     return weekNumber.toString
-//       };
   
     return (
       <div>
-        <h2>{weekly? 'Overview for 2021: Week ' + currentWeek : 'Overview for 2021: ' + new Date(new Date().getFullYear(), currentMonth, 1).toLocaleString('default', { month: 'long' })}</h2>
+        <h2>{weekly? 'Overview for 2021: Week ' + currentWeek : 'Overview for 2021: ' + new Date(new Date().getFullYear(), currentMonth, 1).toLocaleString('default', { month: 'long' })}</h2> 
         <div style={{ display: 'flex', justifyContent: 'center' }}>
         
           <button onClick={switchOverview}>{weekly? 'Month overview' : 'Week overview'}</button>
@@ -135,7 +127,11 @@ var date = moment(timestamp, "YYYYMMDD").format("MMM Do YYYY");
             </tr>
           </thead>
           <tbody>
-            {getEvents().map((event: any, index: number) => (
+            
+            {
+            //uses the getEvents() function to retrieve the array of events based on the selected view
+            //uses the map() method to iterate over each event in the array 
+            getEvents().map((event: any, index: number) => (
               <tr key={index}>
                 <td>{event.Driver}</td>
                 <td>

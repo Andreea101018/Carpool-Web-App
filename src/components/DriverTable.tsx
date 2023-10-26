@@ -4,8 +4,8 @@ import './styles.css';
 import moment from 'moment';
 
 
-const DriverTable: React.FC = () => {//defines a functional React component using arrow function syntax
-    const drivers = ['MR', 'JL', 'AC', 'CJ']; //array with all the drivers 
+const DriverTable: React.FC = () => {//defines a functional component using arrow function syntax
+    const drivers = ['MR', 'JL', 'AC', 'CJ']; //array with all the
   
     const getDriverInfo = (driver: string) => { //takes the driver name as an argument.
       const driverEvents = carpools.CarPoolEvents.filter( //
@@ -61,9 +61,9 @@ const DriverTable: React.FC = () => {//defines a functional React component usin
                 passengerCount,
                 lastDriveTimestamp,
                 lastPassengerTimestamp,
-              } = getDriverInfo(driver);// uses the map function to iterate over the drivers array. For each driver, it generates a table row (<tr>) and its corresponding cells (<td>) using the data obtained from the getDriverInfo function.
+              } = getDriverInfo(driver);
               return (
-                <tr key={driver}>//
+                <tr key={driver}>
                   <td>{driver}</td>
                   <td>{tripCount}</td>
                   <td>{passengerCount}</td>
